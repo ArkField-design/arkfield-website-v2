@@ -1,60 +1,75 @@
-"use client";
-
-import Link from "next/link";
 import Image from "next/image";
 
 export default function Navbar() {
   return (
-    <header className="fixed top-0 left-0 w-full z-50 bg-black/70 backdrop-blur-md border-b border-cyan-500/20">
-      <div className="max-w-7xl mx-auto flex items-center justify-between px-8 py-4">
+    <nav className="absolute top-0 left-0 w-full z-50">
 
-        <Link href="/" className="flex items-center gap-4">
+      {/* Fond transparent de la navbar */}
+      <div className="bg-black/50 backdrop-blur-md px-8 py-4 flex items-center justify-between">
+
+        <div className="flex items-center gap-3">
+
           <Image
-            src="/images/logo.jpg"
-            alt="ArkField"
-            width={55}
-            height={55}
-            className="rounded-full border border-cyan-500"
+            src="/images/logo.webp"
+            alt="ArkField Logo"
+            width={45}
+            height={45}
+            className="object-contain"
           />
 
-          <span className="text-3xl font-bold text-cyan-400 tracking-widest">
+          <h1 className="text-cyan-400 text-2xl font-bold tracking-widest">
             ARKFIELD
-          </span>
-        </Link>
+          </h1>
 
-        <nav className="flex items-center gap-10 text-lg">
+        </div>
 
-          <Link
+
+        <div className="flex items-center gap-8 text-white font-medium">
+
+          <a
             href="/"
-            className="text-white hover:text-cyan-400 transition"
+            className="hover:text-cyan-400 transition"
           >
             Accueil
-          </Link>
+          </a>
 
-          <Link
+
+          <a
             href="/ascended"
-            className="text-white hover:text-green-400 transition"
+            className="hover:text-cyan-400 transition"
           >
             Ascended
-          </Link>
+          </a>
 
-          <Link
+
+          <a
             href="/descended"
-            className="text-white hover:text-yellow-400 transition"
+            className="hover:text-cyan-400 transition"
           >
             Descended
-          </Link>
+          </a>
+
 
           <a
             href="https://discord.gg/mxZq2ArA66"
             target="_blank"
-            className="bg-cyan-500 hover:bg-cyan-400 text-black font-bold px-6 py-2 rounded-xl transition"
+            className="
+            bg-cyan-400 
+            text-black 
+            px-5 
+            py-2 
+            rounded-xl 
+            font-bold
+            hover:bg-cyan-300 
+            transition"
           >
             Discord
           </a>
 
-        </nav>
+        </div>
+
       </div>
-    </header>
+
+    </nav>
   );
 }
